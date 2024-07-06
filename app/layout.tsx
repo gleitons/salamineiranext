@@ -18,7 +18,11 @@ export default function RootLayout({
         <div>
           <MenuTop />
         </div>
-        {children}
+        <div>
+          {children}
+          <div>            
+          </div>
+          </div>
         </body>
     </html>
   );
