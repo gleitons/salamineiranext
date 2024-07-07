@@ -1,19 +1,19 @@
 import Link from "next/link"
 
 import {
-  Menubar,
-  MenubarCheckboxItem,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
-  MenubarTrigger,
+    Menubar,
+    MenubarCheckboxItem,
+    MenubarContent,
+    MenubarItem,
+    MenubarMenu,
+    MenubarRadioGroup,
+    MenubarRadioItem,
+    MenubarSeparator,
+    MenubarShortcut,
+    MenubarSub,
+    MenubarSubContent,
+    MenubarSubTrigger,
+    MenubarTrigger,
 } from "@/components/ui/menubar"
 
 export default function MenuTop(params) {
@@ -37,14 +37,14 @@ export default function MenuTop(params) {
     ]
     return (
         <div>
-            <nav className="flex list-none justify-between	w-1/4">
+            {/* <nav className="flex list-none justify-between	w-1/4">
                 {menus.map((e) => (
                     <Link className=" p-2 hover:bg-black hover:text-neutral-200	" key={e.nome} href={e.link}>
                         <li >{e.nome}</li>
                     </Link>
                 ))}
 
-            </nav>
+            </nav> */}
             <Menubar>
                 <MenubarMenu>
                     <MenubarTrigger>File</MenubarTrigger>
@@ -129,6 +129,36 @@ export default function MenuTop(params) {
                         <MenubarItem inset>Edit...</MenubarItem>
                         <MenubarSeparator />
                         <MenubarItem inset>Add Profile...</MenubarItem>
+                    </MenubarContent>
+                </MenubarMenu>
+
+                <MenubarMenu>
+                    <MenubarTrigger>Páginas</MenubarTrigger>
+                    <MenubarContent>
+                        <MenubarItem>
+                            Undo <MenubarShortcut>⌘Z</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarItem>
+                            Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarSub>
+                            <MenubarSubTrigger>Notícias</MenubarSubTrigger>
+                            <MenubarSubContent>
+                                <MenubarItem>Search the web</MenubarItem>
+                                <MenubarSeparator />
+                                {menus.map((e) => (
+                                    <Link className=" p-2 hover:bg-black hover:text-neutral-200	" key={e.nome} href={e.link}>
+                                        <MenubarItem>{e.nome}</MenubarItem>
+                                    </Link>
+                                ))}
+                              
+                            </MenubarSubContent>
+                        </MenubarSub>
+                        <MenubarSeparator />
+                        <MenubarItem>Cut</MenubarItem>
+                        <MenubarItem>Copy</MenubarItem>
+                        <MenubarItem>Paste</MenubarItem>
                     </MenubarContent>
                 </MenubarMenu>
             </Menubar>
