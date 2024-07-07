@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import MenuTop from '@/app/components/menus/MenuTop'
+import MenuTop from "@/app/components/menus/MenuTop";
+
+
 
 export const metadata: Metadata = {
   title: "Sala Mineira do Empreendedor de Lagoa dos Patos - MG",
@@ -17,13 +19,13 @@ export default function RootLayout({
       <body>
         <div>
           <MenuTop />
+        
         </div>
-        <div>
+        <div className="w-1/2 m-auto">
           {children}
-          <div>            
-          </div>
-          </div>
-        </body>
+          <div></div>
+        </div>
+      </body>
     </html>
   );
 }
